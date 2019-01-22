@@ -19,7 +19,7 @@ function fitToMarkers(markers, map, zoom) {
         map: map,
         radius: 400,
 		clickable:false,
-        fillOpacity: 1,
+        fillOpacity: .3,
 		fillColor: '#5cb2d1',
         strokeColor: '#313131',
         strokeOpacity: .4,

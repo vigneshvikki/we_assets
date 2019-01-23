@@ -21,9 +21,9 @@ function fitToMarkers(markers, map, zoom) {
 		clickable:false,
         fillOpacity: .3,
 		fillColor: '#5cb2d1',
-        strokeColor: '#313131',
-        strokeOpacity: .4,
-        strokeWeight: .8,		
+        strokeColor: '#5cb2d1',
+        strokeOpacity: 1,
+        strokeWeight: 1,		
 		scrollwheel: false,
 		disableDoubleClickZoom: true		
     });

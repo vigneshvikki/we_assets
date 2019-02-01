@@ -16,18 +16,14 @@ function fitToMarkers(markers, map, zoom) {
     }
     circle = new google.maps.Circle({
         center: bounds.getCenter(),
-        map: map,
-        radius: 400,
-		clickable:false,
+        radius:500,
         fillOpacity: .3,
 		fillColor: '#5cb2d1',
         strokeColor: '#5cb2d1',
         strokeOpacity: 1,
-        strokeWeight: 1,		
-		scrollwheel: false,
-		disableDoubleClickZoom: true		
+        strokeWeight: 1		
     });
-    if (markers.length > 1) {
+   /* if (markers.length > 1) {
         map.fitBounds(bounds);
     }
     else if (markers.length == 1) {
@@ -36,9 +32,11 @@ function fitToMarkers(markers, map, zoom) {
         if( zoom != undefined && zoom != '' )
             map.setZoom( parseInt( zoom ) );
         else 
-            map.setZoom( 7 );
-    }
-	if(circle) map.fitBounds(circle.getBounds());
+            map.setZoom(1);
+    }*/
+	map.fitBounds(bounds);
+	circle.setMap(map);
+	//map.fitBounds(bounds);
 }
 
 function ResetMap(button, map_id, lat, lng, zoom) {
@@ -89,10 +87,7 @@ function InitializeForInput(map_id, lat, lng, zoom, map_type, font_icon ) {
         mapTypeId: google_map_type,
         scrollwheel: false,
         streetViewControl: false,
-        panControl: false,
-		disableDefaultUI: true,
-		scrollwheel: false,
-		disableDoubleClickZoom: true
+        panControl: false
     };
 
     var map = new google.maps.Map(document.getElementById(map_id), myOptions);
